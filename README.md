@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Micro-Frontend Host App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Micro-Frontend Host App** repository. This app serves as the host for integrating multiple micro-frontends using **Module Federation**. The project demonstrates how to set up and manage micro-frontends dynamically, enabling multiple independent applications to be integrated into a unified user interface.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Micro-Frontend Integration**: Seamlessly load multiple micro-frontends into a single host application using Webpack's Module Federation.
+- **Dynamic Module Federation**: Dynamically load and share modules between different applications (micro-frontends) in runtime.
+- **Scalable Architecture**: Easily extend and add more micro-frontends as the project grows.
+- **React-based**: Built using React, but can be extended to any JavaScript framework with appropriate configuration.
 
-## Expanding the ESLint configuration
+## 📖 Table of Contents
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Setup](#setup)
+4. [Running the App](#running-the-app)
 
-- Configure the top-level `parserOptions` property like this:
+## 📝 Introduction
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+The **Micro-Frontend Host App** is a demonstration of how to use **Webpack Module Federation** to create a host app that dynamically loads remote micro-frontends. It allows you to build scalable and maintainable web applications by decoupling the frontend code into independently deployable pieces.
+
+## 🚧 Prerequisites
+
+Before you begin, ensure that you have the following installed:
+
+- **Node.js** (>= v14.x)
+- **npm** or **yarn**
+- **Vite** (installation instructions [here](https://vitejs.dev/))
+- **React** (or your preferred frontend framework)
+
+## ⚡ Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/youssef103/mf-host-app.git
+cd mf-host-app
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+- **remote-app repo** [link](https://github.com/youssef103/mf-remote-app)
